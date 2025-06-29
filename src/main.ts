@@ -5,6 +5,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const port = process.env.PORT || 3000;
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -38,7 +39,7 @@ async function bootstrap() {
 
   app.enableCors(); // Enable CORS for frontend integration
 
-  await app.listen(3000);
+  await app.listen(port);
   console.log(`Application is running on: ${await app.getUrl()}`);
   console.log(`Swagger documentation available at: ${await app.getUrl()}/api`);
 }
