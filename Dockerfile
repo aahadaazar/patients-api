@@ -24,6 +24,6 @@ COPY --from=build /app/package.json ./package.json
 
 COPY data ./data
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["node", "dist/main"]
