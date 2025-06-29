@@ -1,98 +1,90 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# **Patient Management Portal \- Backend**
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This repository contains the NestJS backend application for the Patient Management Portal. It provides a robust RESTful API to manage patient data, handle user authentication, and enforce role-based access control.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## **Table of Contents**
 
-## Description
+1. [Project Description](#bookmark=id.bk19aie233kp)  
+2. [Features](#bookmark=id.3w4q4w3989yz)  
+3. [Local Setup](#bookmark=id.rv1nqjleo5gh)  
+   * [Prerequisites](#bookmark=id.5sdfd88w1rs)  
+   * [Cloning the Repository](#bookmark=id.gy4ecsv2xnhy)  
+   * [Installation](#bookmark=id.aroth96jxtzt)  
+   * [Environment Variables](#bookmark=id.s5ffcngwtmex)  
+   * [Running the Application Locally](#bookmark=id.cbemtjj5596a)  
+4. [Docker Setup](#bookmark=id.8ekc656lrp5t)  
+   * [Prerequisites](#bookmark=id.wm18q7hitdbk)  
+   * [Building the Docker Image](#bookmark=id.8dc7tfeejp4i)  
+   * [Running the Docker Container](#bookmark=id.ermfslsqxydz)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## **1\. Project Description**
 
-## Project setup
+The Patient Management Portal backend is a secure and scalable API built with NestJS, a progressive Node.js framework. It serves as the data and business logic layer for the frontend application, handling patient record management and user authentication. The API interacts with a database (e.g., PostgreSQL, MySQL, MongoDB – specify if known) to store and retrieve information securely, adhering to role-based access control policies.
 
-```bash
-$ yarn install
-```
+## **2\. Features**
 
-## Compile and run the project
+* **RESTful API:** Provides endpoints for CRUD (Create, Read, Update, Delete) operations on patient records and user accounts.  
+* **Authentication:** JWT-based authentication for secure API access.  
+* **Authorization:** Role-based access control (RBAC) to restrict actions based on user roles (e.g., Admin, Employee).  
+* **Database Integration:** Connects to a database for data persistence.  
+* **Validation:** Input validation using class-validator to ensure data integrity.  
+* **Pagination:** Supports pagination for listing large datasets of patients.
 
-```bash
-# development
-$ yarn run start
+## **3\. Local Setup**
 
-# watch mode
-$ yarn run start:dev
+### **Prerequisites**
 
-# production mode
-$ yarn run start:prod
-```
+Before you begin, ensure you have the following installed on your machine:
 
-## Run tests
+* **Node.js:** Version 20.x or higher (LTS recommended).  
+* **npm** (Node Package Manager): Comes with Node.js.  
+* **Git:** For cloning the repository.
 
-```bash
-# unit tests
-$ yarn run test
+### **Cloning the Repository**
 
-# e2e tests
-$ yarn run test:e2e
+1. **Clone the backend repository:**  
+   git clone https://github.com/aahadaazar/patients-api  
+   cd patients-api
 
-# test coverage
-$ yarn run test:cov
-```
+### **Installation**
 
-## Deployment
+1. **Install backend dependencies:**  
+   npm install
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### **Environment Variables**
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### **Running the Application Locally**
 
-```bash
-$ yarn install -g @nestjs/mau
-$ mau deploy
-```
+1. **Ensure your database is running** and accessible at the DATABASE\_URL specified in your .env file.  
+2. **Run database migrations or seed data** if your project uses them (e.g., npm run migration:run, npm run seed). Refer to your backend's specific setup instructions for this.  
+3. Start the backend server:  
+   Open your terminal, navigate to the backend project directory, and run:  
+   npm run start:dev  
+   The API will usually be accessible at http://localhost:3000 (or the PORT specified in your .env)
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## **4\. Docker Setup**
 
-## Resources
+You can containerize the backend application using Docker for consistent development and deployment environments.
 
-Check out a few resources that may come in handy when working with NestJS:
+### **Docker Prerequisites**
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+* **Docker Desktop:** Installed and running on your system.
 
-## Support
+### **Building the Docker Image** 
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1. **Navigate to the backend project directory in your terminal.**  
+   cd patients-api
 
-## Stay in touch
+2. **Build the Docker image:**  
+   docker compose up \--build  
+   * This might take a few minutes the first time.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### **Running the Docker Container**
 
-## License
+Once the image is built, you can run it:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+docker run \-p 3000:3000 patient-portal-backend
+
+* This command maps port 3000 on your host machine to port 3000 inside the container.  
+* Your backend API should now be accessible at http://localhost:3000. Remember to update your frontend's VITE\_API\_BASE\_URL if necessary when running the backend via Docker (e.g., [http://localhost:3000](http://localhost:3000))  
+* All the necessary documentation are handled via **SWAGGER**. This would be available on [http://localhost:3000](http://localhost:3000)/api
