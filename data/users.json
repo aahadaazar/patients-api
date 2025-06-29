@@ -1,0 +1,12 @@
+[
+  {
+    "id": "john",
+    "password": "$2b$10$.zoqZ4mKqrRAiJfZjO1ts.d0oDu/n5AEp42RXm9XZ4.G3t8WIvoXm",
+    "role": "ADMIN"
+  },
+  {
+    "id": "jane",
+    "password": "$2b$10$.zoqZ4mKqrRAiJfZjO1ts.d0oDu/n5AEp42RXm9XZ4.G3t8WIvoXm",
+    "role": "EMPLOYEE"
+  }
+]
